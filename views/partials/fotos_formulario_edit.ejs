@@ -1,0 +1,60 @@
+<div class="card shadow-sm border-0">
+  <div class="card-header bg-warning text-dark">
+    <h5 class="card-title mb-0">
+      <i class="bi bi-pencil-square me-2"></i>Edit Photo
+    </h5>
+  </div>
+  <div class="card-body p-4">
+    <form action="/photos/edit" method="post" name="edit">
+      <div class="mb-3">
+        <label for="id" class="form-label fw-semibold">
+          <i class="bi bi-hash me-1"></i>Photo ID
+        </label>
+        <div class="input-group">
+          <input type="text" name="id" class="form-control form-control-lg" id="id" placeholder="Enter photo ID" required="required">
+          <span class="input-group-text" id="loadingSpinner" style="display: none;">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="form-text">Enter the ID of the photo you want to edit. Fields will auto-fill when ID is entered.</div>
+        <div id="photoNotFound" class="alert alert-danger mt-2" style="display: none;" role="alert">
+          <i class="bi bi-exclamation-triangle me-2"></i>Photo not found with this ID.
+        </div>
+        <div id="photoFound" class="alert alert-success mt-2" style="display: none;" role="alert">
+          <i class="bi bi-check-circle me-2"></i>Photo loaded successfully!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="titulo_edit" class="form-label fw-semibold">
+          <i class="bi bi-type-h1 me-1"></i>Title
+        </label>
+        <input type="text" name="titulo" class="form-control form-control-lg" id="titulo_edit" placeholder="Enter photo title" required="required">
+      </div>
+      <div class="mb-3">
+        <label for="descripcion_edit" class="form-label fw-semibold">
+          <i class="bi bi-card-text me-1"></i>Description
+        </label>
+        <textarea name="descripcion" class="form-control" id="descripcion_edit" rows="3" placeholder="Enter photo description" required="required"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="calificacion_edit" class="form-label fw-semibold">
+          <i class="bi bi-star me-1"></i>Rating (0-10)
+        </label>
+        <input type="number" min="0" max="10" step="0.1" name="calificacion" id="calificacion_edit" class="form-control form-control-lg" placeholder="0.0" required="required">
+        <div class="form-text">Enter a rating between 0 and 10</div>
+      </div>
+      <div class="mb-4">
+        <label for="ruta_edit" class="form-label fw-semibold">
+          <i class="bi bi-image me-1"></i>Photo File (Optional)
+        </label>
+        <input type="file" name="ruta" id="ruta_edit" class="form-control form-control-lg" accept=".png">
+        <div class="form-text">Only PNG files are accepted. Leave empty to keep existing photo.</div>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-warning btn-lg text-dark">
+          <i class="bi bi-check-circle me-2"></i>Update Photo
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

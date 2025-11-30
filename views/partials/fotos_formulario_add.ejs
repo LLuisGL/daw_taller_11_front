@@ -1,26 +1,42 @@
-<div class="container">
-  <p class="h2 text-center mt-4">Photos</p>
-  <div class="row mt-4 ">
-     <div class="col-md-4 mx-auto">
-        <div class="myform form ">
-           <form action="/photos/save" method="post" name="add">
-              <div class="form-group mt-2">
-                 <input type="text" name="titulo"  class="form-control" id="titulo" placeholder="Title" required="required">
-              </div>
-              <div class="form-group mt-2">
-                 <input type="text" name="descripcion"  class="form-control" id="descripcion" placeholder="Description" required="required">
-              </div>
-              <div class="form-group mt-2">
-                 <input type="number" min="0" max="10" step="0.1" name="calificacion" id="calificacion"  class="form-control" placeholder="Rate" required="required">
-              </div>
-              <div class="form-group mt-2 text-center">
-                 <input type="file" name="ruta" id="ruta" accept=".png" required="required" />
-              </div>
-              <div class="text-center mt-4">
-                 <button type="submit" class="btn btn-primary">Add</button>
-              </div>
-           </form>
-        </div>
-     </div>
+<div class="card shadow-sm border-0">
+  <div class="card-header bg-primary text-white">
+    <h5 class="card-title mb-0">
+      <i class="bi bi-plus-circle me-2"></i>Add New Photo
+    </h5>
+  </div>
+  <div class="card-body p-4">
+    <form action="/photos/save" method="post" name="add">
+      <div class="mb-3">
+        <label for="titulo" class="form-label fw-semibold">
+          <i class="bi bi-type-h1 me-1"></i>Title
+        </label>
+        <input type="text" name="titulo" class="form-control form-control-lg" id="titulo" placeholder="Enter photo title" required="required">
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label fw-semibold">
+          <i class="bi bi-card-text me-1"></i>Description
+        </label>
+        <textarea name="descripcion" class="form-control" id="descripcion" rows="3" placeholder="Enter photo description" required="required"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="calificacion" class="form-label fw-semibold">
+          <i class="bi bi-star me-1"></i>Rating (0-10)
+        </label>
+        <input type="number" min="0" max="10" step="0.1" name="calificacion" id="calificacion" class="form-control form-control-lg" placeholder="0.0" required="required">
+        <div class="form-text">Enter a rating between 0 and 10</div>
+      </div>
+      <div class="mb-4">
+        <label for="ruta" class="form-label fw-semibold">
+          <i class="bi bi-image me-1"></i>Photo File
+        </label>
+        <input type="file" name="ruta" id="ruta" class="form-control form-control-lg" accept=".png" required="required">
+        <div class="form-text">Only PNG files are accepted</div>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">
+          <i class="bi bi-plus-circle me-2"></i>Add Photo
+        </button>
+      </div>
+    </form>
   </div>
 </div>
